@@ -1,5 +1,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import { getAuth, signOut, signInAnonymously, setPersistence, browserLocalPersistence, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+import { 
+  getAuth, 
+  signOut, 
+  signInAnonymously, 
+  setPersistence, 
+  browserLocalPersistence, 
+  onAuthStateChanged 
+} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 import firebaseConfig from "./firebaseConfig.js";
 
 

@@ -121,6 +121,11 @@
           document.querySelector('#logoutBtn').style.display = 'none';
       }
 
+      //attatch listeners
+      logoutBtn.addEventListener('click', logout);
+      loginBtn.addEventListener('click', signIn);
+      setAuthListeners(setLoggedInUI, setLoggedOutUI);
+
       function renderReviews(reviews){
         let reviewsList = document.querySelector('#reviews');
         let html = '';
@@ -134,34 +139,37 @@
         reviewsList.innerHTML = html;
       }
 
-      function selectBook(bookId, name){
+      function selectBook(isbn, name){
           document.querySelector('#selectedName').innerHTML = name;
           let selectedBook = document.querySelector('#selectedBook');
-          selectedBook.value = bookId;
-          getReviews(bookId, renderReviews);
+          selectedBook.value = isbn;
+          getReviews(isbn, renderReviews);
       }
 
       window.selectBook = selectBook;
 
-      async function submitReivew(event){
-          event.preventDefault();
-          let form = event.target;
-          let formData = new FormData(form);
-          const { text, isbn } = Object.fromEntries(formData);
-          if(isbn === 'null'){
-              alert('Please select a book to review');
-          }
-          else if(auth.currentUser === null){
-              alert('Please login to review');
-          }else{
-            await createReview(auth, isbn, text);
-            M.toast({html: 'Review created!'});
-            form.reset();
-            getReviews(isbn, renderReviews);
-          }
-      }
+reviewForm.addEventListener('submit', submitReivew);
 
-      function renderBooks(books){
+async function submitReivew(event){
+    event.preventDefault();
+    let form = event.target;
+    let formData = new FormData(form);
+    const { text, isbn } = Object.fromEntries(formData);
+    if(isbn === 'null'){
+        alert('Please select a book to review');
+    }
+    else if(auth.currentUser === null){
+        alert('Please login to review');
+    }else{
+      await createReview(auth, isbn, text);
+      M.toast({html: 'Review created!'});
+      form.reset();
+      getReviews(isbn, renderReviews);
+    }
+}
+
+      function renderBooks(books)
+      {
         let booksArea = document.querySelector('#books');
         let html = '';
         for (let book of books){
@@ -177,11 +185,11 @@
                             <p>${book.year}</p>
                             <p>${book.publisher}</p>
                         </div>
-                        <div class="card-action">
-                          <button class="btn waves-effect waves-light review-btn" onclick="selectBook('${book.isbn}', '${book.title}')">
-                            Review
-                          </button>
-                        </div>
+                    <div class="card-action">
+                      <button class="btn waves-effect" onclick="selectBook('${book.isbn}', '${book.title}')">
+                        Review
+                      </button>
+                    </div>
                     </div>
                 </div>`;
         }
@@ -190,13 +198,6 @@
 
       getBooks(renderBooks);
       
-      logoutBtn.addEventListener('click', logout);
-      loginBtn.addEventListener('click', signIn);
-      reviewForm.addEventListener('submit', submitReivew);
-
-      setAuthListeners(setLoggedInUI, setLoggedOutUI);
-      
-
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script> M.AutoInit(); </script>

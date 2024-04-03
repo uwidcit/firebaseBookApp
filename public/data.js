@@ -30,7 +30,7 @@ async function createReview(auth, isbn, text){
         isbn,
         text,
         userId: auth.currentUser.uid,
-        reviewer: 'Anonymous'
+        reviewer: auth.displayName
     };
     addDoc(collection(db, "reviews"), reviewData)
 }
