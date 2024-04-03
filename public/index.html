@@ -1,0 +1,377 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+  
+    <link rel="stylesheet" href="/static/style.css">
+     <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home</title>
+
+    <style>
+      *{
+        box-sizing: border-box;  
+      }
+
+      html{
+        height: 100vh;
+        width: 100vw;
+        margin:0;
+        padding:0;
+      }
+
+      body{
+        margin:0;
+        padding:0;
+        height: 100%;
+        width: 100%;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <nav class="purple">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Home bob</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    
+    
+    
+
+    <div class="row">
+
+      <section class="col s12 m9" style="margin-top: 5px; overflow-y:scroll; height: 86vh">
+        <div class="row">
+           
+          <div class="col s6 m3 l4">
+            <div class="card purple lighten-5">
+
+                <div >
+                    <img src="http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg"  style="display:block; margin: auto; height: 300px;">
+                </div>
+
+              <div class="card-content">
+                <span class="card-title">Decision in Normandy</span>
+
+                <p>Carlo D&#39;Este</p>
+                <p>1991</p>
+                <p>HarperPerennial</p>
+                <br>
+
+                <p class="row">
+                  
+                    <i class="material-icons">
+                      
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>                    
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star_border</i>
+                        <i class="material-icons">star_border</i>
+                      
+                    </i>
+                  
+                </p>
+
+              </div>
+              <div class="card-action">
+                <a href="/review/0060973129">Review</a>
+              </div>
+            </div>
+          </div> 
+
+        </div>
+      </section>
+
+      <section class="col s12 m3">
+            
+            <h1 style="font-size: 1.5em">Selected: Decision in Normandy - 0060973129</h1>
+
+            <form action="/create-review/0060973129" method="POST">
+            <div class="input-field">
+                <textarea id="text" name="text" class="materialize-textarea"></textarea>
+                <label for="text">Textarea</label>
+            </div>
+
+            <div class="row">
+
+                    <label class="col">
+                    <input name="rating" type="radio" value="1" />
+                    <span>1 Star</span>
+                    </label>
+
+                    <label class="col">
+                    <input name="rating" type="radio" value="2" />
+                    <span>2 Star</span>
+                    </label>
+
+                    <label class="col">
+                    <input name="rating" type="radio" value="3" />
+                    <span>3 Star</span>
+                    </label>
+
+                    <label class="col">
+                    <input name="rating" type="radio" value="4" />
+                    <span>4 Star</span>
+                    </label>
+
+                    <label class="col">
+                    <input name="rating" type="radio" value="5" />
+                    <span>5 Star</span>
+                    </label>
+
+            </div>
+
+            <div class="row">
+                <div class="input-field col s4 right">
+                <button class="btn waves-effect waves-light purple" type="submit">
+                    Submit
+                </button>
+                </div>  
+            </div>
+            </form>
+            
+        
+
+          <div class="row" style="height: 44vh; overflow-y: scroll">
+                <ul class="collection">
+                  
+                    
+                    <li class="collection-item">
+
+                        <p>Review: Absolutely loved it! A must-read.</p>
+                        <p>Reviewer: rob</p>
+
+                      <div class="row">
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+
+                        
+                      </div>
+
+                    </li>
+                    
+                    <li class="collection-item">
+
+                        <p>Review: Interesting read but a bit lengthy for my taste.</p>
+                        <p>Reviewer: bob</p>
+
+                      <div class="row">
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star_border</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star_border</i>
+                            
+                          </i>
+                        
+
+                          
+                          <a class="waves-effect waves-light btn btn-flat col s4 right" href="/delete/12">Delete</a>
+                        
+                      </div>
+
+                    </li>
+                    
+                    <li class="collection-item">
+
+                        <p>Review: Did not enjoy it as much as I&#39;d hoped.</p>
+                        <p>Reviewer: </p>
+
+                      <div class="row">
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star_border</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star_border</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star_border</i>
+                            
+                          </i>
+                        
+
+                        
+                      </div>
+
+                    </li>
+                    
+                    <li class="collection-item">
+
+                        <p>Review: Fascinating insights and well-researched.</p>
+                        <p>Reviewer: </p>
+
+                      <div class="row">
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star_border</i>
+                            
+                          </i>
+                        
+
+                        
+                      </div>
+
+                    </li>
+                    
+                    <li class="collection-item">
+
+                        <p>Review: A classic that never gets old. Highly recommended.</p>
+                        <p>Reviewer: </p>
+
+                      <div class="row">
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+                          <i class="material-icons">
+                            
+                              <i class="material-icons">star</i>
+                            
+                          </i>
+                        
+
+                        
+                      </div>
+
+                    </li>
+                    
+                  
+                </ul>
+          </div>
+      
+      </section>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script> M.AutoInit(); </script>
+  </body>
+</html>
