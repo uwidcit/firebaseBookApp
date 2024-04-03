@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
   
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="main.css">
      <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
@@ -36,333 +36,55 @@
   </head>
   <body>
     <nav class="purple">
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Home bob</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/logout">Logout</a></li>
+      <div class="nav-wrapper" style="padding-left: 20px; padding-right: 20px;">
+        <a href="#" class="brand-logo">Home <span id="user"></span></a>
+        <ul class="right">
+          <li>
+            <button class="btn waves-effect waves-light" id="logoutBtn" style="display: none">
+              Logout
+            </button>
+          </li>
+          <li>
+            <button class="btn waves-effect waves-light" id="loginBtn" >
+              Login
+            </button>
+          </li>
         </ul>
+       
       </div>
     </nav>
 
-    
-    
-    
-
     <div class="row">
 
-      <section class="col s12 m9" style="margin-top: 5px; overflow-y:scroll; height: 86vh">
-        <div class="row">
+      <section class="col s12 m8" style="margin-top: 5px; overflow-y:scroll; height: 86vh">
+        <div class="row" id="books">
            
-          <div class="col s6 m3 l4">
-            <div class="card purple lighten-5">
-
-                <div >
-                    <img src="http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg"  style="display:block; margin: auto; height: 300px;">
-                </div>
-
-              <div class="card-content">
-                <span class="card-title">Decision in Normandy</span>
-
-                <p>Carlo D&#39;Este</p>
-                <p>1991</p>
-                <p>HarperPerennial</p>
-                <br>
-
-                <p class="row">
-                  
-                    <i class="material-icons">
-                      
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>                    
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star_border</i>
-                        <i class="material-icons">star_border</i>
-                      
-                    </i>
-                  
-                </p>
-
-              </div>
-              <div class="card-action">
-                <a href="/review/0060973129">Review</a>
-              </div>
-            </div>
-          </div> 
-
         </div>
       </section>
 
-      <section class="col s12 m3">
+      <section class="col s12 m4">
             
-            <h1 style="font-size: 1.5em">Selected: Decision in Normandy - 0060973129</h1>
+            <h1 style="font-size: 1.5em">Selected: <span id="selectedName"></span></h1>
 
-            <form action="/create-review/0060973129" method="POST">
-            <div class="input-field">
-                <textarea id="text" name="text" class="materialize-textarea"></textarea>
-                <label for="text">Textarea</label>
-            </div>
+            <form id="reviewForm">
 
-            <div class="row">
+              <input type="hidden" id="selectedBook" name="isbn" value="null">
+              <div class="input-field">
+                  <textarea id="text" name="text" class="materialize-textarea"></textarea>
+                  <label for="text">Textarea</label>
+              </div>
 
-                    <label class="col">
-                    <input name="rating" type="radio" value="1" />
-                    <span>1 Star</span>
-                    </label>
-
-                    <label class="col">
-                    <input name="rating" type="radio" value="2" />
-                    <span>2 Star</span>
-                    </label>
-
-                    <label class="col">
-                    <input name="rating" type="radio" value="3" />
-                    <span>3 Star</span>
-                    </label>
-
-                    <label class="col">
-                    <input name="rating" type="radio" value="4" />
-                    <span>4 Star</span>
-                    </label>
-
-                    <label class="col">
-                    <input name="rating" type="radio" value="5" />
-                    <span>5 Star</span>
-                    </label>
-
-            </div>
-
-            <div class="row">
-                <div class="input-field col s4 right">
-                <button class="btn waves-effect waves-light purple" type="submit">
-                    Submit
-                </button>
-                </div>  
-            </div>
+              <div class="row">
+                  <div class="input-field col s4 right">
+                  <button class="btn waves-effect waves-light purple" id="reviewBtn"  type="submit">
+                      Submit
+                  </button>
+                  </div>  
+              </div>
             </form>
-            
-        
 
-          <div class="row" style="height: 44vh; overflow-y: scroll">
-                <ul class="collection">
-                  
-                    
-                    <li class="collection-item">
-
-                        <p>Review: Absolutely loved it! A must-read.</p>
-                        <p>Reviewer: rob</p>
-
-                      <div class="row">
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-
-                        
-                      </div>
-
-                    </li>
-                    
-                    <li class="collection-item">
-
-                        <p>Review: Interesting read but a bit lengthy for my taste.</p>
-                        <p>Reviewer: bob</p>
-
-                      <div class="row">
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star_border</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star_border</i>
-                            
-                          </i>
-                        
-
-                          
-                          <a class="waves-effect waves-light btn btn-flat col s4 right" href="/delete/12">Delete</a>
-                        
-                      </div>
-
-                    </li>
-                    
-                    <li class="collection-item">
-
-                        <p>Review: Did not enjoy it as much as I&#39;d hoped.</p>
-                        <p>Reviewer: </p>
-
-                      <div class="row">
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star_border</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star_border</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star_border</i>
-                            
-                          </i>
-                        
-
-                        
-                      </div>
-
-                    </li>
-                    
-                    <li class="collection-item">
-
-                        <p>Review: Fascinating insights and well-researched.</p>
-                        <p>Reviewer: </p>
-
-                      <div class="row">
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star_border</i>
-                            
-                          </i>
-                        
-
-                        
-                      </div>
-
-                    </li>
-                    
-                    <li class="collection-item">
-
-                        <p>Review: A classic that never gets old. Highly recommended.</p>
-                        <p>Reviewer: </p>
-
-                      <div class="row">
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-                          <i class="material-icons">
-                            
-                              <i class="material-icons">star</i>
-                            
-                          </i>
-                        
-
-                        
-                      </div>
-
-                    </li>
-                    
+          <div class="row" style="height: 40vh; overflow-y: scroll">
+                <ul class="collection" id="reviews">
                   
                 </ul>
           </div>
@@ -371,6 +93,105 @@
 
     </div>
 
+    <script type="module">
+      import { signIn, logout, auth, setAuthListeners } from './auth.js';
+      import { getBooks, getReviews, createReview, deleteReview } from './data.js';
+
+      let loginBtn = document.querySelector('#loginBtn');
+      let logoutBtn = document.querySelector('#logoutBtn');
+      let reviewForm = document.querySelector('#reviewForm');
+
+      function setLoggedInUI(){
+          M.toast({html: 'Logged In!'})
+          document.querySelector('#user').innerHTML = `Signed in Anonymously`;
+          document.querySelector('#loginBtn').style.display = 'none';
+          document.querySelector('#logoutBtn').style.display = 'inline-block';
+      }
+
+      function setLoggedOutUI(){
+          M.toast({html: 'Logged Out!'})
+          document.querySelector('#user').innerHTML = '';
+          document.querySelector('#loginBtn').style.display = 'inline-block';
+          document.querySelector('#logoutBtn').style.display = 'none';
+      }
+
+      function renderReviews(reviews){
+        let reviewsList = document.querySelector('#reviews');
+        let html = '';
+        for (let review of reviews){
+            html += `
+                <li class="collection-item">
+                    <p>Review: ${review.text}</p>
+                    <p>Reviewer: ${review.reviewer}</p>
+                </li>`;
+        }
+        reviewsList.innerHTML = html;
+      }
+
+      function selectBook(bookId, name){
+          document.querySelector('#selectedName').innerHTML = name;
+          let selectedBook = document.querySelector('#selectedBook');
+          selectedBook.value = bookId;
+          getReviews(bookId, renderReviews);
+      }
+
+      window.selectBook = selectBook;
+
+      async function submitReivew(event){
+          event.preventDefault();
+          let form = event.target;
+          let formData = new FormData(form);
+          const { text, isbn } = Object.fromEntries(formData);
+          if(isbn === 'null'){
+              alert('Please select a book to review');
+          }
+          else if(auth.currentUser === null){
+              alert('Please login to review');
+          }else{
+            await createReview(auth, isbn, text);
+            M.toast({html: 'Review created!'});
+            form.reset();
+            getReviews(isbn, renderReviews);
+          }
+      }
+
+      function renderBooks(books){
+        let booksArea = document.querySelector('#books');
+        let html = '';
+        for (let book of books){
+            html += `
+                <div class="col s6 m6 l4">
+                    <div class="card purple lighten-5">
+                        <div>
+                            <img src="${book.image}"  style="width:100%">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">${book.title}</span>
+                            <p>${book.author}</p>
+                            <p>${book.year}</p>
+                            <p>${book.publisher}</p>
+                        </div>
+                        <div class="card-action">
+                          <button class="btn waves-effect waves-light review-btn" onclick="selectBook('${book.isbn}', '${book.title}')">
+                            Review
+                          </button>
+                        </div>
+                    </div>
+                </div>`;
+        }
+        booksArea.innerHTML = html;
+      }
+
+      getBooks(renderBooks);
+      
+      logoutBtn.addEventListener('click', logout);
+      loginBtn.addEventListener('click', signIn);
+      reviewForm.addEventListener('submit', submitReivew);
+
+      setAuthListeners(setLoggedInUI, setLoggedOutUI);
+      
+
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script> M.AutoInit(); </script>
   </body>
